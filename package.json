@@ -1,0 +1,7 @@
+{
+  "repository": {
+  },
+  "dependencies": {
+     "webpack": "^1.11.0"
+  }
+}
