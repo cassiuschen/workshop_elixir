@@ -1,0 +1,6 @@
+nav.navbar {
+	font-size: 14px;
+	@include linear-gradient(30deg, red, green);
+	height: 40px;
+	width: 100%;
+}

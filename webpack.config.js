@@ -14,7 +14,7 @@ module.exports = {
       { test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate" },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass??outputStyle=expanded&" +
+        loaders: ["style", "css", "autoprefixer?browsers=last 5 versions", "sass??outputStyle=expanded&" +
           "includePaths[]=" +
             encodeURIComponent(path.resolve(__dirname, "./web/static/css"))]
       }

@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Hello Phoenix!</title>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <title>Startup Workshop</title>
   </head>
 
   <body>
-    <div class="container" role="main">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-        </ul>
-        <span class="logo"></span>
-      </div>
+      <nav class="navbar">
+        <a class="logo"></a>
+        <div class="menu">
+          <a href="" class="link"></a>
+          <a href="" class="link"></a>
+          <a href="" class="link"></a>
+          <div class="right menu"><a href=""></a><a href=""></a></div>
+        </div>
+      </nav>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
@@ -25,11 +27,6 @@
       <%= @inner %>
 
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <script>
-      var app = require("web/static/js/app").App
-
-      app.run()
-    </script>
+    
   </body>
 </html>
