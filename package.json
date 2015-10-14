@@ -5,9 +5,14 @@
     "babel-loader": "^5.3.2",
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.10.0",
+    "css-loader": "^0.19.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
     "node-sass": "^3.3.3",
     "sass-loader": "^3.0.0",
+    "style-loader": "^0.12.4",
     "uglify-loader": "^1.2.0",
+    "url-loader": "^0.5.6",
     "webpack": "^1.11.0"
   }
 }

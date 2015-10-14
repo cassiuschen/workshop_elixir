@@ -1,3 +1,5 @@
+//var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var path = require('path');
 module.exports = {
   entry: "./web/static/js/app.js",
   output: {
@@ -6,17 +8,20 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, loader: "babel-loader" },
+      { test: /\.js$/, loaders: ["uglify-loader", "babel-loader"] },
       { test: /\.coffee$/, loader: "coffee-loader" },
+      { test: /\.(jpg|png)$/, loader: "url?limit=8192"},
       { test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate" },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      },{
-        test: /.*\/app\/.*\.js$/,
-        exclude: /.spec.js/, // excluding .spec files
-        loader: "uglify"
+        loaders: ["style", "css", "sass??outputStyle=expanded&" +
+          "includePaths[]=" +
+            encodeURIComponent(path.resolve(__dirname, "./web/static/css"))]
       }
     ]
-  }
+  },
+  plugins: [
+    //new webpack.optimize.CommonsChunkPlugin('common.js'),
+    //new ExtractTextPlugin("[name].css")
+  ]
 };
