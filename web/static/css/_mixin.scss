@@ -4,3 +4,15 @@
 	background: -moz-linear-gradient($startFrom,$startColor,$endColor);
 	background: -o-linear-gradient($startFrom,$startColor,$endColor);
 }
+
+@mixin linear-gradient-with-image($url, $startFrom, $startColor, $endColor) {
+	background-image: url($url), -webkit-linear-gradient($startFrom,$startColor,$endColor);
+	background-image: url($url), -webkit-gradient(linear,$startFrom,right bottom,from($startColor), to($endColor));
+	background-image: url($url), -moz-linear-gradient($startFrom,$startColor,$endColor);
+	background-image: url($url), -o-linear-gradient($startFrom,$startColor,$endColor);
+}
+
+
+%shadow {
+	box-shadow: rgba(0, 0, 0, .2) 0 3px 5px 0;
+}

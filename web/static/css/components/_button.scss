@@ -1,0 +1,22 @@
+.btn {
+	&.white {
+		color: white;
+		border-color: white;
+	}
+
+	&.big {
+		font-size: 18px;
+		padding: 12px 18px;
+	}
+
+	border-radius: 2px;
+	font-size: 14px;
+	line-height: 18px;
+	text-align: center;
+	display: inline-block;
+	font-weight: 100;
+
+	border-width: 1px;
+	border-style: solid;
+	padding:  7px 15px;
+}

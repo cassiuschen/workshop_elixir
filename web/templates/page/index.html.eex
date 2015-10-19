@@ -1,1 +1,8 @@
-<h1 class="title">Startup Workshop</h1>
+<div class="cover">
+	<div class="title">
+		<i class="logo"></i>
+		<span class="sub-title">Learn, Practice, and Startup</span>
+		<div class="actions"><a href="" class="action btn white big">查看近期活动</a></div>
+	</div>
+	<div id="next"></div>
+</div>
