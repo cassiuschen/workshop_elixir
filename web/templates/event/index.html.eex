@@ -1,0 +1,38 @@
+<div class="container">
+  <%= for event <- @events do %>
+    <div class="card">
+      <div class="icon"></div>
+      <div class="info">
+        <div class="title"><%= event.title %></div>
+        <div class="subtitle">
+          <%= event.location %>
+        </div>
+        <div class="des"><%= event.des %></div>
+      </div>
+      <div class="requirement">
+        <dl>
+          <div class="group">
+            <dt>活动分级</dt>
+            <dd><%= event.level %></dd>
+          </div>
+          <div class="group">
+            <dt>活动容量</dt>
+            <dd><%= event.max_count%>人</dd>
+          </div>
+          <div class="group">
+            <dt>基本要求</dt>
+            <dd><%= event.requirement %></dd>
+          </div>
+        </dl>
+      </div>
+      
+      <!--
+      <%= link "Show", to: event_path(@conn, :show, event), class: "btn btn-default btn-xs" %>
+      <%= link "Edit", to: event_path(@conn, :edit, event), class: "btn btn-default btn-xs" %>
+      <%= link "Delete", to: event_path(@conn, :delete, event), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      -->
+    </div>
+  <% end %>
+  <%= link "New event", to: event_path(@conn, :new) %>
+
+</div>

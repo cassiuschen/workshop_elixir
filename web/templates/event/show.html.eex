@@ -1,0 +1,53 @@
+<h2>Show event</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @event.title %>
+  </li>
+
+  <li>
+    <strong>Des:</strong>
+    <%= @event.des %>
+  </li>
+
+  <li>
+    <strong>Max count:</strong>
+    <%= @event.max_count %>
+  </li>
+
+  <li>
+    <strong>Level:</strong>
+    <%= @event.level %>
+  </li>
+
+  <li>
+    <strong>Requirement:</strong>
+    <%= @event.requirement %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @event.location %>
+  </li>
+
+  <li>
+    <strong>Time:</strong>
+    <%= @event.time %>
+  </li>
+
+  <li>
+    <strong>Teacher:</strong>
+    <%= @event.teacher %>
+  </li>
+
+  <li>
+    <strong>Raw tags:</strong>
+    <%= @event.raw_tags %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: event_path(@conn, :edit, @event) %>
+<%= link "Back", to: event_path(@conn, :index) %>

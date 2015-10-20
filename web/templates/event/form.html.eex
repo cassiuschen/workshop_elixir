@@ -1,0 +1,65 @@
+<div class="container">
+  <%= form_for @changeset, @action, fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below:</p>
+        <ul>
+          <%= for {attr, message} <- f.errors do %>
+            <li><%= humanize(attr) %> <%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= label f, :title, "Title", class: "control-label" %>
+      <%= text_input f, :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :des, "Des", class: "control-label" %>
+      <%= text_input f, :des, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :max_count, "Max count", class: "control-label" %>
+      <%= number_input f, :max_count, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :level, "Level", class: "control-label" %>
+      <%= text_input f, :level, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :requirement, "Requirement", class: "control-label" %>
+      <%= text_input f, :requirement, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :location, "Location", class: "control-label" %>
+      <%= text_input f, :location, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :time, "Time", class: "control-label" %>
+      <%= datetime_select f, :time, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :teacher, "Teacher", class: "control-label" %>
+      <%= text_input f, :teacher, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :raw_tags, "Raw tags", class: "control-label" %>
+      <%= text_input f, :raw_tags, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= submit "Submit", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  
+</div>

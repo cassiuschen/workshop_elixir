@@ -1,6 +1,7 @@
 nav.navbar {
 	font-size: 14px;
-	@include linear-gradient(30deg, #FF1F5B, #60A5D5);
+	background-color: $red;
+	@include linear-gradient(30deg, $red, $blue);
 	height: 60px;
 	width: 100%;
 	position: fixed;
@@ -20,5 +21,15 @@ nav.navbar {
 		background-position: 0 center;
 		display: inline-block;
 		margin-left: 15px;
+	}
+}
+
+@media(max-width: 600px) {
+	nav.navbar {
+		.logo {
+			width: 100%;
+			background-position: center center;
+			margin-left: 0;
+		}
 	}
 }

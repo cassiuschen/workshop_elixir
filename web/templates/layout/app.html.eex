@@ -10,7 +10,7 @@
     <title>Startup Workshop</title>
   </head>
 
-  <body>
+  <body class="<%= @controller_name %>">
       <nav class="navbar">
         <a class="logo"></a>
         <div class="menu">
@@ -23,10 +23,14 @@
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
       <%= @inner %>
 
+      
+
     </div> <!-- /container -->
+    <footer class="info">
+      © 2015, Cassius Chen - 京ICP备15052812号
+    </footer>
     
   </body>
 </html>

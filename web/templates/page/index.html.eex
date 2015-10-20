@@ -2,7 +2,9 @@
 	<div class="title">
 		<i class="logo"></i>
 		<span class="sub-title">Learn, Practice, and Startup</span>
-		<div class="actions"><a href="" class="action btn white big">查看近期活动</a></div>
+		<div class="actions">
+			<%= link "查看近期活动", to: event_path(@conn, :index), class: "btn action white big" %>
+		</div>
 	</div>
 	<div id="next"></div>
 </div>
