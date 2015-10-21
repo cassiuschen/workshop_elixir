@@ -11,7 +11,7 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "../../../deps/phoenix_html/web/static/js/phoenix_html";
+require("../../../deps/phoenix_html/web/static/js/phoenix_html");
 
 // Import local files
 //
@@ -24,12 +24,11 @@ import "../../../deps/phoenix_html/web/static/js/phoenix_html";
 // SCSS Files
 require('../css/app.scss');
 
-var App = {
-  run: function run() {
-    console.log("Hello!");
-  }
-};
+// Bower Files
+window.$ = require("jquery/dist/jquery");
+window.UI = require('./ui.js');
 
-module.exports = {
-  App: App
-};
+$(document).ready(function() {
+  UI.initAttendanceForm();
+  console.log("ready!");
+});

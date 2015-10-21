@@ -1,0 +1,27 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1 class="header">参加活动</h1>
+  <a class="close">放弃申请</a>
+  <h4 class="sub-header">请填写以下信息以报名参加活动</h4>
+    <%= email_input f, :email, class: "full", placeholder: "Email 地址" %>
+
+    <%= text_input f, :name, class: "half", placeholder: "姓名"%>
+    <%= text_input f, :wechat, class: "half", placeholder: "微信"%>
+    <%= text_input f, :mobile, class: "full", placeholder: "手机号" %>
+    
+    
+   
+    <%= text_input f, :info, class: "full", placeholder: "描述，如：15数媒网络、网推部干事等，以便识别身份" %>
+   
+    <%= submit "提交申请", class: "submit" %>
+<% end %>

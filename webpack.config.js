@@ -1,10 +1,14 @@
 //var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
+var webpack = require("webpack");
 module.exports = {
   entry: "./web/static/js/app.js",
   output: {
     path: "./priv/static/js",
     filename: "app.js"
+  },
+  resolve: {
+    root: [path.join(__dirname, "bower_components")]
   },
   module: {
     loaders: [
@@ -22,6 +26,9 @@ module.exports = {
   },
   plugins: [
     //new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    )
     //new ExtractTextPlugin("[name].css")
   ]
 };

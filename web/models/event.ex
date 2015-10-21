@@ -12,11 +12,14 @@ defmodule Workshop.Event do
     field :teacher, :string
     field :raw_tags, :string
 
+    has_many :attendances, Workshop.Attendance
+
     timestamps
   end
 
   @required_fields ~w(title max_count level requirement location time)
   @optional_fields ~w(des teacher raw_tags)
+
 
   @doc """
   Creates a changeset based on the `model` and `params`.

@@ -2,13 +2,15 @@ defmodule Workshop.EventController do
   use Workshop.Web, :controller
 
   alias Workshop.Event
+  alias Workshop.Attendance
 
   plug :scrub_params, "event" when action in [:create, :update]
   plug :controller_name, "event"
 
   def index(conn, _params) do
     events = Repo.all(Event)
-    render(conn, "index.html", events: events)
+    attendance_changeset = Attendance.changeset(%Attendance{})
+    render(conn, "index.html", events: events, attendance_changeset: attendance_changeset)
   end
 
   def new(conn, _params) do

@@ -23,7 +23,7 @@ html, body {
 
 * {
 	font-family: Roboto, "Myriad Pro", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
-	//transition: all .28s;
+	transition: all .28s;
 	-webkit-tap-highlight-color: transparent;
 	outline: none !important;
 	//user-select:none;
@@ -56,7 +56,12 @@ body {
 		background-attachment: fixed;
 	}
 }
-@media(max-width: 600px) {
+
+.container+footer {
+	position: fixed;
+	bottom: 0;
+}
+@media(max-width: 960px) {
 	.container {
 		width: 100%;
 		padding: 25px 15px;

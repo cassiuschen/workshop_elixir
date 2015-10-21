@@ -18,8 +18,18 @@ defmodule Workshop.Router do
 
     get "/", PageController, :index
 
-    resources "/events", EventController
+    resources "events", EventController, only: [:index, :edit, :new, :create, :update] do
+      resources "attendances", AttendanceController, only: [:create, :index]
+    end
   end
+
+  #scope "/api", Workshop do
+  #  pipe_through :api
+
+  #  resources, EventController, only: [:index, :edit, :new, :create, :update] do
+  #    resources "attendances", AttendanceController, only: [:index, :create]
+  #  end
+  #end
 
   # Other scopes may use custom stacks.
   # scope "/api", Workshop do
