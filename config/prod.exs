@@ -13,13 +13,14 @@ use Mix.Config
 # which you typically run after static files are built.
 config :workshop, Workshop.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  url: [host: "workshop.cassiuschen.com", port: 8081],
+  cache_static_manifest: "priv/static/manifest.json",
+  server: true
 
 # Do not print debug messages in production
 config :logger, level: :info
 
-# ## SSL Support
+# ## SSL Suppo:rt
 #
 # To get SSL working, you will need to add the `https` key
 # to the previous section and set your `:url` port to 443:

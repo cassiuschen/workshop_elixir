@@ -50,7 +50,7 @@ defmodule Workshop.EventController do
       {:ok, event} ->
         conn
         |> put_flash(:info, "Event updated successfully.")
-        |> redirect(to: event_path(conn, :show, event))
+        |> redirect(to: event_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", event: event, changeset: changeset)
     end
