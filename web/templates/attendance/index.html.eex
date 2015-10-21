@@ -1,6 +1,7 @@
 <div class="container">
 	<h1>报名列表</h1>
 	<table>
+	<thead>
 		<tr>
 			<th>姓名</th>
 			<th>手机号</th>
@@ -9,15 +10,18 @@
 			<th>身份</th>
 			<th>申请时间</th>
 		</tr>
+	</thead>
+	<tbody>
 		<%= for at <- @event.attendances do %>
 			<tr>
-				<td><% at.name %></td>
-				<td><% at.mobile %></td>
-				<td><% at.wechat %></td>
-				<td><% at.email %></td>
-				<td><% at.info %></td>
-				<td><% humanize_time at.inserted_at %></td>
+				<td><%= at.name %></td>
+				<td><%= at.mobile %></td>
+				<td><%= at.wechat %></td>
+				<td><%= at.email %></td>
+				<td><%= at.info %></td>
+				<td><%= humanize_time at.inserted_at %></td>
 			</tr>
 		<% end %>
+	</tbody>
 	</table>
 </div>
